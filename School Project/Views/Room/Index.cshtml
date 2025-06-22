@@ -1,0 +1,29 @@
+﻿@model List<Room>
+
+<link href="~/css/Table.css" rel="stylesheet" />
+
+<h1>room table</h1>
+
+<a class="Link" href="/room/Create">Add New Room</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Room room in Model)
+        {
+            <tr>
+                <td>
+                    @room.RoomName
+                </td>
+                <td>
+                    <a href="/Room/Delete/@room.Roomid">X</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿@model List<Teacher>
+
+<link href="~/css/Table.css" rel="stylesheet" />
+
+<h1>Teacher table</h1>
+
+<a class="Link" href="/Teacher/Create">Add New Teacher</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Teacher Teacher in Model)
+        {
+            <tr>
+                <td>
+                    @Teacher.TeacherName
+                </td>
+                <td>
+                    @Teacher.TeacherAge
+                </td>
+                <td>
+                    <a href="/Teacher/Delete/@Teacher.Teacherid">X</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model List<Student>
+
+<link href="~/css/Table.css" rel="stylesheet" />
+
+<h1>Student table</h1>
+
+<a class="Link" href="/Student/Create">Add New Student</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Photo</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Student student in Model)
+        {
+            <tr>
+                <td>
+                    @student.StudentName
+                </td>
+                <td>
+                    @student.age
+                </td>
+                <td>
+                    <a href="/Student/Delete/@student.studentid">X</a>
+                </td>
+                <td>
+                    <img src="~/StudentPictures/@student.PhotoName" width="50" height="50" alt="Student Photo" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

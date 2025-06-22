@@ -1,0 +1,26 @@
+﻿@model School_Project.Views.Models.StudentViewModelcs
+
+<link href="~/css/Formdesign.css" rel="stylesheet" />
+
+<a class="back-label" href="/Home/index">← Back to Main Page</a>
+
+<!-- Registration Form -->
+<form asp-action="Register" method="post">
+    <label for="student">Students</label>
+    <select id="studentid" name="studentid">
+        @foreach(Student student in Model.Students)
+        {
+            <option value="@student.studentid">@student.StudentName</option>
+        }
+    </select>
+
+    <label for="course">Courses</label>
+    <select id="course" name="courseid">
+        @foreach (Course course in Model.courses)
+        {
+            <option value="@course.Courseid">@course.CourseName</option>
+        }
+    </select>
+
+    <button type="submit">Register</button>
+</form>
